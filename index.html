@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myLibrary</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="cLoad">
+        <div class="loading"></div>
+    </div>
+
+    <header class="cabecalho">
+
+        <h1 class="titulo">myLibrary</h1>
+
+        <nav class="navMenu">
+            <a href="#" class="navItem active">Home</a>
+            <a href="#" class="navItem">Categorias</a>
+            <a href="#" class="navItem">Favoritos</a>
+            <a href="#" class="navItem">Minha Biblioteca</a>
+        </nav>
+
+    </header>
+
+    <main class="containerPrincipal" id="containerPrincipal">
+
+        <section class="hero">
+
+            <!-- lado esquerdo (texto) -->
+            <div class="heroContent">
+                <h1>
+                    Descubra seu <span>próximo livro</span> favorito
+                </h1>
+                <p>
+                    Explore títulos incríveis, encontre novas histórias e mergulhe em universos únicos que vão te
+                    prender do começo ao fim.
+                </p>
+
+                <div class="heroButtons">
+                    <button class="btnPrimary">Explorar coleção</button>
+                    <button class="btnSecondary">Ver categorias</button>
+                </div>
+            </div>
+
+            <!-- lado direito (imagens) -->
+            <div class="heroImages">
+
+                <!-- <div class="livroHero">
+                    <img src="img/livro2.jpg" alt="Livro 2" class="livroHero2">
+                    <span class="rank">#2</span>
+                    <span class="downloadsTop">9.8k downloads</span>
+                    <span class="tag">Popular</span>
+                </div>
+
+
+                <div class="livroHero">
+                    <img src="img/livro1.jpg" alt="Livro 1" class="livroHero1">
+                    <span class="rank">#1</span>
+                    <span class="downloadsTop">12.5k downloads</span>
+                    <span class="tag">Top</span>
+                </div>
+
+                <div class="livroHero">
+                    <img src="img/livro3.jpg" alt="Livro 3" class="livroHero3">
+                    <span class="rank">#3</span>
+                    <span class="downloadsTop">7.2k downloads</span>
+                    <span class="tag">Em alta</span>
+                </div> -->
+
+            </div>
+            
+        </section>
+
+        <div class="boxBusca">
+
+            <input type="text" id="inputBusca" class="inputBusca" placeholder="Buscar livro, autores, categoria...">
+
+            <!-- <button id="btnBuscar" class="btnBuscar">
+                Buscar
+            </button> -->
+
+        </div>
+
+        <div class="categorias">
+            <div class="cateSub">
+                <h2>Explorar Categorias</h2>
+                <p>Navegue por gêneros e descubra novas histórias para ler.</p>
+            </div>
+
+            <div class="categoriasBtns">
+                <button class="btnCategoria">Romance</button>
+                <button class="btnCategoria">Fantasia</button>
+                <button class="btnCategoria">Mistério</button>
+                <button class="btnCategoria">Terror</button>
+                <button class="btnCategoria">Ficção Científica</button>
+                <button class="btnCategoria">Aventura</button>
+                <button class="btnCategoria">Drama</button>
+                <button class="btnCategoria">Comédia</button>
+            </div>
+        </div>
+
+
+        <section class="sectionLivros">
+
+            <div class="tituloSecao">
+                <h2>Todos os Livros</h2>
+                <p>Explore nossa coleção completa</p>
+            </div>
+
+            <div id="listaLivros" class="listaLivros">
+
+            </div>
+
+        </section>
+
+        <!-- hide livro -->
+        <div class="leitura-container hide" id="leituraContainer">
+
+            <!-- BOTAO VOLTAR -->
+            <button class="btn-voltar" id="btnVoltar">← Voltar</button>
+
+            <div class="leitura-content">
+
+                <!-- IMAGEM -->
+                <div class="livro-img">
+
+                    <img src="" alt="img livro" class="imgLivroHide">
+
+                </div>
+
+                <!-- INFOS -->
+                <div class="livro-info">
+                    <h1 class="tituloHide">Nome do Livro</h1>
+                    <p class="badge categoria">📚 Ficção</p>
+
+
+                    <div class="detalhes">
+                        <p class="badge nameAutor">👤 Nome do Autor</p>
+                        <p class="badge lingua">🌍 Português</p>
+
+                        <p class="badge direitos">⚖️ Domínio Público</p>
+
+                        <p class="badge downloads">⬇️ 15234 downloads</p>
+                    </div>
+
+                    <div class="sinopse">
+                        <h2>Sinopse</h2>
+                        <p>
+                            Aqui vai a sinopse do livro. Você pode colocar um texto mais longo,
+                            descrevendo a história, personagens e o universo da obra.
+                            Esse espaço cresce conforme o conteúdo.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="acoes">
+
+                <button class="btn ler">📖 Ler agora</button>
+                <button class="btn favorito">❤️ Favoritar</button>
+                <button class="btn salvar">💾 Salvar</button>
+
+                <div class="progresso">
+                    <p>Progresso de leitura</p>
+                    <div class="barra">
+                        <p class="barra-fill" style="width: 30%;"></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- parte sem livros -->
+
+        <div id="estadoVazio" class="estadoVazio hide">
+            <p>📖 Nenhum livro encontrado...</p>
+            <span>Tente buscar por "Dom Casmurro"</span>
+        </div>
+
+
+    </main>
+
+    <!-- section footer -->
+
+    <section class="footer">
+
+        <div class="footerContainer">
+
+            <div class="footerGrid">
+
+                <div class="footerBrand">
+                    <h3>myLibrary</h3>
+
+                    <p>Entre páginas e histórias, cada livro guarda um universo único.</p>
+                    <p>Uma biblioteca digital para explorar novas leituras.</p>
+                </div>
+
+                <div class="footerNav">
+                    <h3>Navegação</h3>
+
+                    <ul class="footerLinks">
+                        <li class="footerLinkItem">Home</li>
+                        <li class="footerLinkItem">Livros</li>
+                        <li class="footerLinkItem">Categorias</li>
+                        <li class="footerLinkItem">Favoritos</li>
+                        <li class="footerLinkItem">Sobre</li>
+                    </ul>
+                </div>
+
+                <div class="footerProject">
+                    <h3>Projeto</h3>
+
+                    <p>Desenvolvido por João</p>
+
+                    <p class="footerDescription">
+                        Plataforma focada em organização e exploração de livros.
+                    </p>
+
+                    <p class="footerTech">HTML • CSS • JavaScript</p>
+
+                    <p class="footerStatus">SYSTEM v1.0</p>
+                </div>
+
+            </div>
+
+
+            <div class="footerCopy">
+
+                <div class="footerSocial">
+
+                    <a href="https://www.instagram.com/zero_jao7" target="_blank">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="https://github.com/jaozinpaulin" target="_blank">
+                        <i class="bi bi-github"></i>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@zero_jao7" target="_blank">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/" target="_blank">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                </div>
+
+
+
+                <div class="footerBottom">
+
+                    <span>
+                        Projeto desenvolvido por
+                        <span class="footerAuthor">João Paulo</span>
+                    </span>
+
+                    <div class="footerBottomInfo">
+                        <span>&copy; 2026 myLibrary</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

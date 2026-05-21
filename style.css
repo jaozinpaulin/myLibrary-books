@@ -16,8 +16,8 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #0D0D0D, #1A1A1A);
 
-    background: #0D0D0D;
     color: #fff;
 
     display: flex;
@@ -54,8 +54,8 @@ body.ativeBody {
 
 
 .loading {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
 
     position: relative;
 
@@ -135,19 +135,30 @@ body.ativeBody {
     align-items: center;
     justify-content: space-around;
 
-
     z-index: 999;
-    border-bottom: 1px solid #444444d5;
+
     padding: 0.5rem 0;
+    background: linear-gradient(to right, #0D0D0D, #1A1A1A);
+    border-bottom: 1px #cccccc34 solid;
+}
 
-
-    background-color: #121212b7;
-
+.tituloContainer {
+    display: flex;
+    gap: .8rem;
+    font-family: 'Audiowide', cursive;
 }
 
 .titulo {
-    color: #ff6200;
+    color: #fff;
 }
+
+.tmy {
+    font-size: small;
+    transform: rotate(90deg);
+}
+
+
+
 
 
 /* navs */
@@ -160,22 +171,21 @@ body.ativeBody {
 .navItem {
     position: relative;
     text-decoration: none;
-    color: #aaa;
+    color: #fff;
 
     padding: 8px 15px;
     font-size: 14px;
     transition: 0.5s;
 
     border-radius: 12px;
-    border: 1px #0D0D0D solid;
 }
 
 .navItem:hover {
-    background-color: #ffffff24;
+    background-color: #64646459;
 }
 
 .navItem.active {
-    border-color: #ff6200;
+    background-color: #ff720c;
 }
 
 /* main */
@@ -279,9 +289,11 @@ body.ativeBody {
 .livroHero:nth-child(1) {
     order: 2;
 }
+
 .livroHero:nth-child(2) {
     order: 1;
 }
+
 .livroHero:nth-child(3) {
     order: 3;
 }
@@ -310,7 +322,6 @@ body.ativeBody {
     font-weight: bold;
 }
 
-/* downloads */
 .downloadsTop {
     position: absolute;
     bottom: 8px;
@@ -323,7 +334,6 @@ body.ativeBody {
     z-index: 5;
 }
 
-/* tag */
 .tag {
     position: absolute;
     top: 8px;
@@ -335,142 +345,19 @@ body.ativeBody {
     font-size: 12px;
 }
 
+/* busca  explorar categoria*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.boxBusca {
-    width: 60%;
-
-    display: flex;
-    margin: 3rem auto;
-    gap: 15px;
-
-    margin-bottom: 25px;
-    padding: 10px;
-    padding: 3rem 0;
-}
-
-.inputBusca {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-
-    border: 1px solid #1f1f1f;
-    background: #121212;
-
-    color: #fff;
-    padding: 1.2rem;
-    font-size: medium;
-}
-
-.inputBusca::placeholder {
-    color: #777;
-}
-
-.btnBuscar {
-    padding: 10px 16px;
-    border-radius: 10px;
-    border: none;
-
-    background: linear-gradient(135deg, #ff8c42, #ff6a00);
-    color: #fff;
-    font-weight: 600;
-
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btnBuscar:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 12px #ff8c4260;
-}
-
-
-/* generos */
-
-.categorias {
-    width: 100%;
-    margin: 40px auto;
-    padding: 30px;
-
-    background: #111;
-    border-radius: 20px;
-    border: 1px solid #1f1f1f;
-
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-
-    gap: 15px;
-}
-
-.categorias h2 {
-    font-size: clamp(22px, 3vw, 30px);
-    color: #fff;
-}
-
-.categorias p {
-    font-size: 14px;
-    color: #aaa;
-    text-align: center;
-}
-
-.categoriasBtns {
-    width: 100%;
-
-    display: flex;
-    align-items: flex-start;
-
-    gap: 12px;
-    margin-top: 10px;
-}
-
-.btnCategoria {
-    padding: 10px 18px;
-    background: #1a1a1a;
-    color: #fff;
-
-    border: 1px solid #2a2a2a;
-    border-radius: 12px;
-
-    cursor: pointer;
-    transition: 0.5s ease;
-}
-
-.btnCategoria:hover {
-    background: #ff720c;
-    border-color: #ff6a00;
-    transform: translateY(-2px);
-}
-
-.btnCategoria:active {
-    transform: scale(0.95);
-}
 
 /* section livros */
 .sectionLivros {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    
+    gap: 2rem;
     padding: 3rem 0;
+    margin-top: 3rem;
 }
 
 .tituloSecao {
@@ -500,7 +387,7 @@ body.ativeBody {
 .livro {
     background: #121212;
     border-radius: 14px 14px 0 0;
-    border: 1px solid #1f1f1f;
+    border: 1px solid #414141;
 
     transition: 0.5s ease;
 }
@@ -532,33 +419,13 @@ body.ativeBody {
 
 }
 
-.cLivroInfo small {
+.autorSub {
     opacity: 0.7;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .livro p {
     font-size: 13px;
     color: #aaa;
-    display: none;
-}
-
-
-.estadoVazio {
-    text-align: center;
-    margin-top: 30px;
-    color: #777;
-}
-
-.estadoVazio span {
-    font-size: 12px;
-    opacity: 0.7;
-}
-
-.hide {
     display: none;
 }
 
@@ -734,6 +601,211 @@ body.ativeBody {
 }
 
 
+/* SECTION */
+.categoriasSection {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.tituloCategoria h2 {
+    color: #ff720c;
+    font-size: 2.5rem;
+    margin-bottom: .5rem;
+}
+
+.tituloCategoria p {
+    color: #bcbcbc;
+}
+
+/* INPUT */
+.inputBuscaCategoria {
+    max-width: 700px;
+    width: 100%;
+    position: relative;
+}
+
+.iconLupa {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff720c;
+}
+
+.inputCategoria {
+    width: 100%;
+    padding: 18px 20px 18px 50px;
+    border: none;
+
+    border-radius: 14px;
+    background: #161616;
+    color: white;
+    border: 1px #cccccc21 solid;
+}
+
+
+/* GRID PRINCIPAL */
+.layoutCategoria {
+    width: 100%;
+    height: 100%;
+    max-height: 850px;
+
+    display: flex;
+    gap: 2rem;
+}
+
+
+/* ASIDE */
+.containerFiltrosCategoria {
+    width: 100%;
+    max-width: 300px;
+    background: #111;
+    padding: 1rem;
+
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: min-content;
+}
+
+
+/* header filtro */
+.filtroHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa-filter {
+    color: #ff720c;
+}
+
+.filtroHp2 {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtroHp2:hover {
+    color: #ff720c;
+}
+
+/* GENEROS */
+.containerFiltroGenero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.cardGenero {
+    padding: 0.5rem 1rem;
+    background: #1c1c1c;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cardGenero.ativo {
+    background-color: #ff720c;
+}
+
+.cardGenero:hover:not(.ativo) {
+    background: #424242;
+    transform: translateY(-2px);
+}
+
+
+/* AUTORES */
+.containerFiltroGeneroSub strong {
+    color: #ff720c;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.containerAutores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+
+
+.cardAutor {
+    padding: 0.6rem;
+    background: #1d1d1d;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+.cardAutor.ativo {
+    background-color: #ff720c;
+}
+
+.cardAutor:hover:not(.ativo) {
+    background: #424242;
+    transform: translateY(-2px);
+}
+
+/* LIVROS */
+.containerLivros {
+    position: relative;
+
+    height: 100%;
+    width: 100%;
+    max-height: 80vh;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    gap: 1.5rem;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1rem;
+}
+
+.containerLivros::-webkit-scrollbar {
+    width: 12px;
+}
+
+.containerLivros::-webkit-scrollbar-track {
+    background: #3b3b3b;
+    border-radius: 20px;
+}
+
+.containerLivros::-webkit-scrollbar-thumb {
+    background: #ff720c;
+    border-radius: 20px;
+    border: 2px #3b3b3b solid;
+}
+
+.estadoVazio {
+    text-align: center;
+    color: #777;
+    height: min-content;
+    border-right: 1px #3b3b3b solid;
+}
+
+.estadoVazio span {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* RESPONSIVO */
+/* @media(max-width:900px) {
+
+    .layoutCategoria {
+        grid-template-columns: 1fr;
+    }
+
+} */
+
 
 
 /* footer  */
@@ -747,7 +819,7 @@ body.ativeBody {
     justify-content: center;
 
     border-top: 1px solid #1f1f1f;
-    background: #121212;
+    background: linear-gradient(to right, #0D0D0D, #1A1A1A);
 }
 
 .footerContainer {
@@ -894,4 +966,10 @@ body.ativeBody {
         flex-direction: column;
     }
 
+}
+
+.hide {
+    display: none;
+    pointer-events: none;
+    user-select: none;
 }

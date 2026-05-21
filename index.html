@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -17,13 +19,21 @@
         <div class="loading"></div>
     </div>
 
-    <header class="cabecalho">
+    <header class="cabecalho" id="cabecalho">
 
-        <h1 class="titulo">myLibrary</h1>
+        <div class="tituloContainer">
+
+            <a href="#containerPrincipal" class="homeNav">
+                <span class="tmy">my</span>
+                <h1 class="titulo">
+                    <span class="tli">Library</span>
+                </h1>
+            </a>
+        </div>
 
         <nav class="navMenu">
-            <a href="#" class="navItem active">Home</a>
-            <a href="#" class="navItem">Categorias</a>
+            <a href="#containerPrincipal" class="navItem homeNav homeNavHero active">Home</a>
+            <a href="#" class="navItem btnCategorias btnCategoriasNav">Categorias</a>
             <a href="#" class="navItem">Favoritos</a>
             <a href="#" class="navItem">Minha Biblioteca</a>
         </nav>
@@ -32,7 +42,7 @@
 
     <main class="containerPrincipal" id="containerPrincipal">
 
-        <section class="hero">
+        <section class="hero ">
 
             <!-- lado esquerdo (texto) -->
             <div class="heroContent">
@@ -45,76 +55,27 @@
                 </p>
 
                 <div class="heroButtons">
-                    <button class="btnPrimary">Explorar coleção</button>
-                    <button class="btnSecondary">Ver categorias</button>
+                    <button class="btnPrimary" id="btnExplorar">Explorar coleção</button>
+                    <button class="btnSecondary btnCategorias">Ver categorias</button>
                 </div>
             </div>
 
-            <!-- lado direito (imagens) -->
             <div class="heroImages">
-
-                <!-- <div class="livroHero">
-                    <img src="img/livro2.jpg" alt="Livro 2" class="livroHero2">
-                    <span class="rank">#2</span>
-                    <span class="downloadsTop">9.8k downloads</span>
-                    <span class="tag">Popular</span>
-                </div>
-
-
-                <div class="livroHero">
-                    <img src="img/livro1.jpg" alt="Livro 1" class="livroHero1">
-                    <span class="rank">#1</span>
-                    <span class="downloadsTop">12.5k downloads</span>
-                    <span class="tag">Top</span>
-                </div>
-
-                <div class="livroHero">
-                    <img src="img/livro3.jpg" alt="Livro 3" class="livroHero3">
-                    <span class="rank">#3</span>
-                    <span class="downloadsTop">7.2k downloads</span>
-                    <span class="tag">Em alta</span>
-                </div> -->
-
+                <!-- js injetando os top tres livros -->
             </div>
-            
+
         </section>
 
-        <div class="boxBusca">
-
-            <input type="text" id="inputBusca" class="inputBusca" placeholder="Buscar livro, autores, categoria...">
-
-            <!-- <button id="btnBuscar" class="btnBuscar">
-                Buscar
-            </button> -->
-
-        </div>
-
-        <div class="categorias">
-            <div class="cateSub">
-                <h2>Explorar Categorias</h2>
-                <p>Navegue por gêneros e descubra novas histórias para ler.</p>
-            </div>
-
-            <div class="categoriasBtns">
-                <button class="btnCategoria">Romance</button>
-                <button class="btnCategoria">Fantasia</button>
-                <button class="btnCategoria">Mistério</button>
-                <button class="btnCategoria">Terror</button>
-                <button class="btnCategoria">Ficção Científica</button>
-                <button class="btnCategoria">Aventura</button>
-                <button class="btnCategoria">Drama</button>
-                <button class="btnCategoria">Comédia</button>
-            </div>
-        </div>
 
 
-        <section class="sectionLivros">
+        <section class="sectionLivros " id="sectionLivros">
 
             <div class="tituloSecao">
                 <h2>Todos os Livros</h2>
                 <p>Explore nossa coleção completa</p>
             </div>
 
+            <!-- livros injetados pelo js -->
             <div id="listaLivros" class="listaLivros">
 
             </div>
@@ -181,14 +142,61 @@
         </div>
 
 
-        <!-- parte sem livros -->
+        <section class="categoriasSection hide">
 
-        <div id="estadoVazio" class="estadoVazio hide">
-            <p>📖 Nenhum livro encontrado...</p>
-            <span>Tente buscar por "Dom Casmurro"</span>
-        </div>
+            <div class="tituloCategoria">
+                <h2>Categorias</h2>
+                <p>Filtre e encontre exatamente o que procura</p>
+            </div>
+
+            <div class="inputBuscaCategoria">
+                <span class="iconLupa">🔍</span>
+                <input type="text" placeholder="Buscar livros, autores, categorias" class="inputCategoria">
+            </div>
 
 
+            <div class="layoutCategoria">
+
+                <!-- esquerda -->
+                <aside class="containerFiltrosCategoria">
+
+                    <div class="filtroHeader">
+                        <strong>
+                            <i class="fa-solid fa-filter"></i>
+                            <span>Filtros</span>
+                        </strong>
+
+                        <strong class="filtroHp2">Limpar</strong>
+
+                    </div>
+
+                    <div class="containerFiltroGenero">
+                        <!-- <div class="cardGenero">Romance</div> -->
+                    </div>
+
+                    <div class="containerFiltroGeneroSub">
+                        <strong>Autores em destaque</strong>
+
+                        <div class="containerAutores">
+                            <!-- <div class="cardAutor">Machado</div> -->
+                        </div>
+
+                    </div>
+
+                </aside>
+
+                <!-- sem livros -->
+                <div class="containerLivros">
+                    <div class="estadoVazio hide">
+                        <p>📖 Nenhum livro encontrado...</p>
+                        <span>Tente buscar por "Moby Dick"</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
     </main>
 
     <!-- section footer -->

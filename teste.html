@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #0d0d0d;
+            color: white;
+            padding: 40px 20px;
+        }
+
+
+        /* SECTION */
+        .categorias {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+
+
+        .tituloCategoria h2 {
+            color: #ff720c;
+            font-size: 2.5rem;
+            margin-bottom: .5rem;
+        }
+
+        .tituloCategoria p {
+            color: #bcbcbc;
+        }
+
+
+        /* INPUT */
+        .inputBuscaCategoria {
+            max-width: 700px;
+            width: 100%;
+            position: relative;
+        }
+
+        .iconLupa {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ff720c;
+        }
+
+        .inputCategoria {
+            width: 100%;
+            padding: 18px 20px 18px 50px;
+            border: none;
+
+            border-radius: 14px;
+            background: #161616;
+            color: white;
+        }
+
+
+        /* GRID PRINCIPAL */
+        .layoutCategoria {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+
+
+        /* ASIDE */
+        .containerFiltrosCategoria {
+            background: #111;
+            padding: 2rem;
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            height: fit-content;
+        }
+
+
+        /* HEADER */
+        .filtroHeader {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .filtroHp2 {
+            color: #ff720c;
+            cursor: pointer;
+        }
+
+
+        /* GENEROS */
+        .containerFiltroGenero {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .cardGenero {
+            padding: 1rem;
+            background: #1c1c1c;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .cardGenero:hover {
+            border-left: 4px solid #ff720c;
+            transform: translateX(5px);
+        }
+
+
+        /* AUTORES */
+        .containerFiltroGeneroSub strong {
+            color: #ff720c;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .containerAutores {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .7rem;
+        }
+
+        .cardAutor {
+            padding: .7rem 1rem;
+            background: #1d1d1d;
+            border-radius: 30px;
+            font-size: .9rem;
+        }
+
+
+        /* LIVROS */
+        .containerLivros {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+
+        /* CARD LIVRO */
+        .cardLivro {
+            background: #151515;
+            padding: 1rem;
+            border-radius: 18px;
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        .cardLivro:hover {
+            transform: translateY(-8px);
+            border: 1px solid #ff720c;
+        }
+
+        .cardLivro img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .cardLivro h3 {
+            color: #ff720c;
+            margin-bottom: .5rem;
+        }
+
+        .cardLivro p {
+            color: #bdbdbd;
+            font-size: .9rem;
+        }
+
+
+        /* RESPONSIVO */
+        @media(max-width:900px) {
+
+            .layoutCategoria {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <section class="categorias">
+
+        <div class="tituloCategoria">
+            <h2>Categorias</h2>
+            <p>Filtre e encontre exatamente o que procura</p>
+        </div>
+
+
+        <div class="inputBuscaCategoria">
+            <span class="iconLupa">🔍</span>
+            <input type="text" placeholder="Buscar livros, autores, categorias" class="inputCategoria">
+        </div>
+
+
+        <div class="layoutCategoria">
+
+            <!-- esquerda -->
+            <aside class="containerFiltrosCategoria">
+
+                <div class="filtroHeader">
+                    <strong>⚙️ Filtros</strong>
+                    <strong class="filtroHp2">✖ Limpar</strong>
+                </div>
+
+                <div class="containerFiltroGenero">
+
+                    <div class="cardGenero">Romance</div>
+                    <div class="cardGenero">Terror</div>
+                    <div class="cardGenero">Drama</div>
+                    <div class="cardGenero">Fantasia</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+                    <div class="cardGenero">Mistério</div>
+
+
+                </div>
+
+                <div class="containerFiltroGeneroSub">
+                    <strong>Autores em destaque</strong>
+
+                    <div class="containerAutores">
+                        <div class="cardAutor">Machado</div>
+                        <div class="cardAutor">Stephen King</div>
+                        <div class="cardAutor">Tolkien</div>
+                        <div class="cardAutor">Orwell</div>
+                    </div>
+                </div>
+
+            </aside>
+
+
+            <!-- direita -->
+            <div class="containerLivros">
+
+                <div class="cardLivro">
+                    <img src="https://picsum.photos/300/400?1">
+                    <h3>Livro 01</h3>
+                    <p>Autor exemplo</p>
+                </div>
+
+                <div class="cardLivro">
+                    <img src="https://picsum.photos/300/400?2">
+                    <h3>Livro 02</h3>
+                    <p>Autor exemplo</p>
+                </div>
+
+                <div class="cardLivro">
+                    <img src="https://picsum.photos/300/400?3">
+                    <h3>Livro 03</h3>
+                    <p>Autor exemplo</p>
+                </div>
+
+                <div class="cardLivro">
+                    <img src="https://picsum.photos/300/400?4">
+                    <h3>Livro 04</h3>
+                    <p>Autor exemplo</p>
+                </div>
+                <div class="cardLivro">
+                    <img src="https://picsum.photos/300/400?4">
+                    <h3>Livro 04</h3>
+                    <p>Autor exemplo</p>
+                </div>
+                <div class="cardLivro">
+                    <img src="https://picsum.photos/300/400?4">
+                    <h3>Livro 04</h3>
+                    <p>Autor exemplo</p>
+                </div>
+                <div class="cardLivro">
+                    <img src="https://picsum.photos/300/400?4">
+                    <h3>Livro 04</h3>
+                    <p>Autor exemplo</p>
+                </div>
+                <div class="cardLivro">
+                    <img src="https://picsum.photos/300/400?4">
+                    <h3>Livro 04</h3>
+                    <p>Autor exemplo</p>
+                </div>
+                <div class="cardLivro">
+                    <img src="https://picsum.photos/300/400?4">
+                    <h3>Livro 04</h3>
+                    <p>Autor exemplo</p>
+                </div>
+                <div class="cardLivro">
+                    <img src="https://picsum.photos/300/400?4">
+                    <h3>Livro 04</h3>
+                    <p>Autor exemplo</p>
+                </div>
+                <div class="cardLivro">
+                    <img src="https://picsum.photos/300/400?4">
+                    <h3>Livro 04</h3>
+                    <p>Autor exemplo</p>
+                </div>
+                <div class="cardLivro">
+                    <img src="https://picsum.photos/300/400?4">
+                    <h3>Livro 04</h3>
+                    <p>Autor exemplo</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

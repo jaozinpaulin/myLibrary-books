@@ -2,35 +2,85 @@
 
 Aplicação web de biblioteca que consome uma API de livros para exibir informações de forma dinâmica e interativa.
 
-## 🚧 Status do Projeto
+## ✅ Status do Projeto
 
-Projeto em desenvolvimento — atualmente em **1/3 concluído**.
+Projeto concluído (Versão 1.0)
 
-## 🚀 Funcionalidades atuais
+## 📷 Preview do Projeto
 
-* Listagem de livros via API
-* Exibição dinâmica de informações
-* Sistema de clique para visualizar detalhes
+| 🏠 Página Inicial | 🔍 Busca e Filtros |
+|-------------------|-------------------|
+| ![Página Inicial](./imgs/paginaInicial.png) | ![Busca e Filtros](./imgs/categoria.png) |
 
-## 🔜 Próximas funcionalidades
+| ❤️ Área de Favoritos | 📖 Leitura, Download e Favoritos |
+|----------------------|----------------------------------|
+| ![Favoritos](./imgs/favoritos.png) | ![Leitura, Download e Favoritos](./imgs/baixarLerFav.png) |
 
-* Sistema de favoritos
-* Filtros de busca
-* Leitura e visualização mais completa dos livros
-* Melhorias na interface
+## 🚀 Funcionalidades
 
-## 🛠️ Tecnologias utilizadas
+### 📖 Biblioteca
+- Listagem dinâmica de livros através de API
+- Exibição de capa, autor, gênero e informações dos livros
+- Visualização detalhada dos livros
+- Atualização automática dos dados
 
-* HTML5
-* CSS3
-* JavaScript
-* Fetch API
-* LocalStorage (em desenvolvimento)
+### 🔎 Pesquisa e Filtros
+- Busca por título
+- Busca por autor
+- Filtro por gênero
+- Atualização dinâmica dos resultados
+
+### ❤️ Sistema de Favoritos
+- Adicionar livros aos favoritos
+- Remover livros dos favoritos
+- Página exclusiva para favoritos
+- Filtro por gênero dentro dos favoritos
+- Persistência dos favoritos com LocalStorage
+
+### 📊 Informações Dinâmicas
+- Contador de livros
+- Contador de favoritos
+- Atualização automática das estatísticas
+
+### ⚠️ Tratamento de Estados
+- Tela de carregamento
+- Tratamento de erros da API
+- Mensagem para ausência de favoritos
+- Mensagem para gêneros sem livros favoritos
+- Atualização dinâmica da interface
+
+## 🛠️ Tecnologias Utilizadas
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Fetch API
+- LocalStorage
+- JavaScript Modules (Import/Export)
 
 ## 🎯 Objetivo
 
-Praticar consumo de API, manipulação de DOM e construção de aplicações web interativas.
+Desenvolver uma aplicação web completa para praticar:
+
+- Consumo de APIs
+- Manipulação do DOM
+- JavaScript moderno
+- Modularização de código
+- Armazenamento local com LocalStorage
+- Organização de projetos Front-End
+
+## 📚 Conceitos Aplicados
+
+- Async/Await
+- Fetch API
+- Eventos
+- Manipulação de Classes
+- Dataset
+- Arrays e Métodos (`forEach`, `filter`, `some`, `includes`)
+- LocalStorage
+- Import e Export de módulos
+- Tratamento de erros
 
 ---
 
-📌 Este projeto faz parte do meu processo de aprendizado e será atualizado com novas funcionalidades.
+📌 Projeto desenvolvido por **João Paulo** como parte da sua jornada de aprendizado em Desenvolvimento Web.

@@ -1,29 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>myLibrary</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css" />
+
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:FILL@1" />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="cLoad">
-        <div class="loading"></div>
+    <div class="loadingOverlay hide">
+        <div class="loadingBox">
+            <div class="spinner"></div>
+
+            <p>Carregando...</p>
+            <span class="loadingHint">Pode demorar um pouco...</span>
+        </div>
+    </div>
+    <!-- status error -->
+    <div class="errorContainer hide">
+        <div class="errorStatus">
+            <!-- IMAGEM -->
+            <div class="errorImage">
+                <img src="imgs/No data-pana.svg" alt="No data" />
+            </div>
+
+            <!-- TEXTO -->
+            <div class="errorContent">
+                <h1 class="errorTitle">Nenhum dado encontrado</h1>
+
+                <p class="errorText">
+                    Não encontramos informações para exibir no momento. Você
+                    pode atualizar a página ou tentar novamente mais tarde.
+                </p>
+
+                <div class="errorActions">
+                    <button class="errorBtn" onclick="location.reload()">
+                        Atualizar
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <header class="cabecalho" id="cabecalho">
+        <div class="heroClock">
+            <span class="hora">00:00:00</span>
+        </div>
 
         <div class="tituloContainer">
-
-            <a href="#containerPrincipal" class="homeNav">
+            <a href="#containerPrincipal" class="homeNav linkLogo">
                 <span class="tmy">my</span>
                 <h1 class="titulo">
                     <span class="tli">Library</span>
@@ -34,74 +71,100 @@
         <nav class="navMenu">
             <a href="#containerPrincipal" class="navItem homeNav homeNavHero active">Home</a>
             <a href="#" class="navItem btnCategorias btnCategoriasNav">Categorias</a>
-            <a href="#" class="navItem">Favoritos</a>
-            <a href="#" class="navItem">Minha Biblioteca</a>
+            <a href="#" class="navItem favLivrosNav">Favoritos</a>
         </nav>
 
+        <button class="btnMenuMobile">
+            <i class="material-symbols-rounded">menu</i>
+        </button>
+
+        <nav class="menuMobile">
+            <!-- LOGO NO TOPO -->
+            <div class="logoMobile">
+                <span class="logoPrefix">my</span>
+                <span class="logoMain">Library</span>
+            </div>
+
+            <a href="#containerPrincipal" class="navItem homeNav homeNavHero">
+                Home
+            </a>
+
+            <a href="#" class="navItem btnCategorias btnCategoriasNav">
+                Categorias
+            </a>
+
+            <a href="#" class="navItem favLivrosNav"> Favoritos </a>
+
+            <!-- 1036404 -->
+        </nav>
+
+        <div class="overlayMenu"></div>
     </header>
 
     <main class="containerPrincipal" id="containerPrincipal">
-
-        <section class="hero ">
-
+        <section class="hero">
             <!-- lado esquerdo (texto) -->
             <div class="heroContent">
-                <h1>
-                    Descubra seu <span>próximo livro</span> favorito
-                </h1>
+                <h1>Descubra seu <span>próximo livro</span> favorito</h1>
                 <p>
-                    Explore títulos incríveis, encontre novas histórias e mergulhe em universos únicos que vão te
-                    prender do começo ao fim.
+                    Explore títulos incríveis, encontre novas histórias e
+                    mergulhe em universos únicos que vão te prender do
+                    começo ao fim.
                 </p>
 
                 <div class="heroButtons">
-                    <button class="btnPrimary" id="btnExplorar">Explorar coleção</button>
-                    <button class="btnSecondary btnCategorias">Ver categorias</button>
+                    <button class="btnPrimary" id="btnExplorar">
+                        Explorar coleção
+                    </button>
+                    <button class="btnSecondary btnCategorias">
+                        Ver categorias
+                    </button>
                 </div>
             </div>
 
             <div class="heroImages">
                 <!-- js injetando os top tres livros -->
             </div>
-
         </section>
 
-
-
-        <section class="sectionLivros " id="sectionLivros">
-
+        <section class="sectionLivros" id="sectionLivros">
             <div class="tituloSecao">
                 <h2>Todos os Livros</h2>
                 <p>Explore nossa coleção completa</p>
             </div>
 
             <!-- livros injetados pelo js -->
-            <div id="listaLivros" class="listaLivros">
+            <div id="listaLivros" class="listaLivros"></div>
 
+            <div class="acoesLivros">
+                <button id="btnMais" class="btnLivros">
+                    <i class="material-icons"> expand_more </i>
+                </button>
+
+                <button id="btnMenos" class="btnLivros hiddenBtn">
+                    <i class="material-icons"> expand_less </i>
+                </button>
             </div>
-
         </section>
 
         <!-- hide livro -->
         <div class="leitura-container hide" id="leituraContainer">
-
             <!-- BOTAO VOLTAR -->
-            <button class="btn-voltar" id="btnVoltar">← Voltar</button>
+            <div class="voltarFavoritoSub">
+                <button class="btn-voltar" id="btnVoltar">Voltar</button>
+                <span class="favoritosSub ativo hide">❤️</span>
+            </div>
 
             <div class="leitura-content">
-
                 <!-- IMAGEM -->
                 <div class="livro-img">
-
-                    <img src="" alt="img livro" class="imgLivroHide">
-
+                    <img src="" alt="img livro" class="imgLivroHide" />
                 </div>
 
                 <!-- INFOS -->
                 <div class="livro-info">
                     <h1 class="tituloHide">Nome do Livro</h1>
                     <p class="badge categoria">📚 Ficção</p>
-
 
                     <div class="detalhes">
                         <p class="badge nameAutor">👤 Nome do Autor</p>
@@ -114,36 +177,26 @@
 
                     <div class="sinopse">
                         <h2>Sinopse</h2>
-                        <p>
-                            Aqui vai a sinopse do livro. Você pode colocar um texto mais longo,
-                            descrevendo a história, personagens e o universo da obra.
-                            Esse espaço cresce conforme o conteúdo.
-                        </p>
+
+                        <p class="texto-sinopse"></p>
+
+                        <span class="toggle-sinopse material-icons">
+                            expand_more
+                        </span>
                     </div>
                 </div>
-
             </div>
 
             <div class="acoes">
-
-                <button class="btn ler">📖 Ler agora</button>
-                <button class="btn favorito">❤️ Favoritar</button>
-                <button class="btn salvar">💾 Salvar</button>
-
-                <div class="progresso">
-                    <p>Progresso de leitura</p>
-                    <div class="barra">
-                        <p class="barra-fill" style="width: 30%;"></p>
-                    </div>
-                </div>
-
+                <button class="btn ler">Ler agora</button>
+                <button class="btn favorito" id="favoritoBtn">
+                    ❤️ Favoritar
+                </button>
+                <button class="btn salvar">Baixar PDF</button>
             </div>
-
         </div>
 
-
         <section class="categoriasSection hide">
-
             <div class="tituloCategoria">
                 <h2>Categorias</h2>
                 <p>Filtre e encontre exatamente o que procura</p>
@@ -151,15 +204,12 @@
 
             <div class="inputBuscaCategoria">
                 <span class="iconLupa">🔍</span>
-                <input type="text" placeholder="Buscar livros, autores, categorias" class="inputCategoria">
+                <input type="text" placeholder="Buscar livros, autores, categorias" class="inputCategoria" />
             </div>
 
-
             <div class="layoutCategoria">
-
                 <!-- esquerda -->
                 <aside class="containerFiltrosCategoria">
-
                     <div class="filtroHeader">
                         <strong>
                             <i class="fa-solid fa-filter"></i>
@@ -167,7 +217,6 @@
                         </strong>
 
                         <strong class="filtroHp2">Limpar</strong>
-
                     </div>
 
                     <div class="containerFiltroGenero">
@@ -180,95 +229,145 @@
                         <div class="containerAutores">
                             <!-- <div class="cardAutor">Machado</div> -->
                         </div>
-
                     </div>
-
                 </aside>
 
                 <!-- sem livros -->
-                <div class="containerLivros">
-                    <div class="estadoVazio hide">
-                        <p>📖 Nenhum livro encontrado...</p>
-                        <span>Tente buscar por "Moby Dick"</span>
-                    </div>
 
+                <div class="favoritosEmptyGenero hide">
+                    <p>
+                        Nenhum livro favorito encontrado com esse nome,
+                        autor ou gênero.
+                    </p>
                 </div>
 
+                <div class="containerLivros"></div>
+
+                <button id="btnVerMaisLivros" class="btnVerMaisLivros">
+                    Ver todos os livros
+                </button>
+            </div>
+        </section>
+
+        <!-- section favoritos -->
+        <section class="favoritosSection hide">
+            <div class="favoritosHeader">
+                <h2>❤️ Seus Favoritos</h2>
+                <p>Os livros que você salvou para ler depois.</p>
             </div>
 
+            <div class="divFavCon">
+                <div class="inputBuscaCategoria">
+                    <span class="iconLupa">🔍</span>
+                    <input type="text" placeholder="Buscar livros, autores, categorias" class="inputCategoria" />
+                </div>
+                <!-- resumo -->
+                <div class="favoritosInfo">
+                    <span>Total: <strong class="contFav">0</strong></span>
+                    <span>Última atualização:
+                        <strong class="horaAtual"></strong></span>
+                </div>
+            </div>
+
+            <!-- filtros -->
+            <div class="closeGeneros">
+                <span class="closeGene">Limpar</span>
+                <div class="generosFavoritos"></div>
+            </div>
+
+            <!-- mensagem vazia -->
+            <div class="favoritosEmpty hide">
+                <p>Nenhum livro favoritado ainda 📚</p>
+                <span>Adicione livros aos favoritos para vê-los aqui.</span>
+            </div>
+
+            <div class="favoritosEmptyGenero hide">
+                <p>
+                    Nenhum livro favorito encontrado com esse nome, autor ou
+                    gênero.
+                </p>
+            </div>
+
+            <!-- grid -->
+            <div class="favoritosGrid"></div>
         </section>
     </main>
 
     <!-- section footer -->
 
-    <section class="footer">
-
+    <footer class="footer">
         <div class="footerContainer">
-
             <div class="footerGrid">
-
                 <div class="footerBrand">
                     <h3>myLibrary</h3>
 
-                    <p>Entre páginas e histórias, cada livro guarda um universo único.</p>
-                    <p>Uma biblioteca digital para explorar novas leituras.</p>
+                    <p>
+                        Entre páginas e histórias, cada livro guarda um
+                        universo único.
+                    </p>
+                    <p>
+                        Uma biblioteca digital para explorar novas leituras.
+                    </p>
                 </div>
 
                 <div class="footerNav">
                     <h3>Navegação</h3>
 
                     <ul class="footerLinks">
-                        <li class="footerLinkItem">Home</li>
-                        <li class="footerLinkItem">Livros</li>
-                        <li class="footerLinkItem">Categorias</li>
-                        <li class="footerLinkItem">Favoritos</li>
-                        <li class="footerLinkItem">Sobre</li>
+                        <li>
+                            <a href="#containerPrincipal" class="footerLinkItem homeNav homeNavHero">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footerLinkItem btnCategorias btnCategoriasNav">
+                                Categorias
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footerLinkItem favLivrosNav">
+                                Favoritos
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="footerProject">
                     <h3>Projeto</h3>
 
-                    <p>Desenvolvido por João</p>
-
                     <p class="footerDescription">
-                        Plataforma focada em organização e exploração de livros.
+                        Plataforma focada em organização e exploração de
+                        livros.
                     </p>
 
                     <p class="footerTech">HTML • CSS • JavaScript</p>
 
                     <p class="footerStatus">SYSTEM v1.0</p>
                 </div>
-
             </div>
 
-
             <div class="footerCopy">
-
                 <div class="footerSocial">
-
-                    <a href="https://www.instagram.com/zero_jao7" target="_blank">
+                    <a href="https://www.instagram.com/zero_jao7" target="_blank" class="socialLink">
                         <i class="bi bi-instagram"></i>
                     </a>
 
-                    <a href="https://github.com/jaozinpaulin" target="_blank">
+                    <a href="https://github.com/jaozinpaulin" target="_blank" class="socialLink">
                         <i class="bi bi-github"></i>
                     </a>
 
-                    <a href="https://www.tiktok.com/@zero_jao7" target="_blank">
+                    <a href="https://www.tiktok.com/@zero_jao7" target="_blank" class="socialLink">
                         <i class="bi bi-tiktok"></i>
                     </a>
 
-                    <a href="https://www.linkedin.com/" target="_blank">
+                    <a href="https://www.linkedin.com/in/joao-paulo-da-silva-soares" target="_blank" class="socialLink">
                         <i class="bi bi-linkedin"></i>
                     </a>
-
                 </div>
 
-
-
                 <div class="footerBottom">
-
                     <span>
                         Projeto desenvolvido por
                         <span class="footerAuthor">João Paulo</span>
@@ -277,16 +376,12 @@
                     <div class="footerBottomInfo">
                         <span>&copy; 2026 myLibrary</span>
                     </div>
-
                 </div>
             </div>
-
         </div>
+    </footer>
 
-    </section>
-
-    <script src="script.js"></script>
-
+    <script src="js/script.js" type="module"></script>
 </body>
 
 </html>

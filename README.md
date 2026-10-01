@@ -1,55 +1,52 @@
-# 📚 myLibrary
+# myLibrary
 
-Aplicação web de biblioteca que consome uma API de livros para exibir informações de forma dinâmica e interativa.
+Aplicação web de biblioteca desenvolvida para consumir uma API de livros e exibir informações dinâmicas e interativas.
 
-## ✅ Status do Projeto
+## Status do Projeto
 
 Projeto concluído (Versão 1.0)
 
-## 📷 Preview do Projeto
+## Preview do Projeto
 
-| 🏠 Página Inicial | 🔍 Busca e Filtros |
+| Página Inicial | Busca e Filtros |
 |-------------------|-------------------|
 | ![Página Inicial](./imgs/paginaInicial.png) | ![Busca e Filtros](./imgs/categoria.png) |
 
-| ❤️ Área de Favoritos | 📖 Leitura, Download e Favoritos |
+| Área de Favoritos | Leitura, Download e Favoritos |
 |----------------------|----------------------------------|
 | ![Favoritos](./imgs/favoritos.png) | ![Leitura, Download e Favoritos](./imgs/baixarLerFav.png) |
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
-### 📖 Biblioteca
+### Biblioteca
 - Listagem dinâmica de livros através de API
 - Exibição de capa, autor, gênero e informações dos livros
 - Visualização detalhada dos livros
 - Atualização automática dos dados
 
-### 🔎 Pesquisa e Filtros
+### Pesquisa e Filtros
 - Busca por título
 - Busca por autor
 - Filtro por gênero
 - Atualização dinâmica dos resultados
 
-### ❤️ Sistema de Favoritos
-- Adicionar livros aos favoritos
-- Remover livros dos favoritos
+### Sistema de Favoritos
+- Adicionar e remover livros dos favoritos
 - Página exclusiva para favoritos
 - Filtro por gênero dentro dos favoritos
-- Persistência dos favoritos com LocalStorage
+- Persistência de dados com LocalStorage
 
-### 📊 Informações Dinâmicas
+### Informações Dinâmicas
 - Contador de livros
 - Contador de favoritos
 - Atualização automática das estatísticas
 
-### ⚠️ Tratamento de Estados
-- Tela de carregamento
-- Tratamento de erros da API
-- Mensagem para ausência de favoritos
-- Mensagem para gêneros sem livros favoritos
-- Atualização dinâmica da interface
+### Tratamento de Estados
+- Tela de carregamento (Loading)
+- Tratamento de erros de requisição da API
+- Mensagens de feedback para estados vazios
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - HTML5
 - CSS3
@@ -58,29 +55,23 @@ Projeto concluído (Versão 1.0)
 - LocalStorage
 - JavaScript Modules (Import/Export)
 
-## 🎯 Objetivo
+## Objetivo
 
-Desenvolver uma aplicação web completa para praticar:
+Desenvolvimento de aplicação web completa para prática e consolidação de:
 
-- Consumo de APIs
-- Manipulação do DOM
-- JavaScript moderno
-- Modularização de código
+- Consumo de APIs REST
+- Manipulação avançada do DOM
+- JavaScript moderno e modularização
 - Armazenamento local com LocalStorage
 - Organização de projetos Front-End
 
-## 📚 Conceitos Aplicados
+## Conceitos Aplicados
 
 - Async/Await
-- Fetch API
-- Eventos
-- Manipulação de Classes
-- Dataset
-- Arrays e Métodos (`forEach`, `filter`, `some`, `includes`)
-- LocalStorage
-- Import e Export de módulos
-- Tratamento de erros
+- Eventos e Manipulação de Classes
+- Dataset e Manipulação de Arrays (`forEach`, `filter`, `some`, `includes`)
+- Tratamento de erros assíncronos
 
 ---
 
-📌 Projeto desenvolvido por **João Paulo** como parte da sua jornada de aprendizado em Desenvolvimento Web.
+Projeto desenvolvido por **João Paulo** como parte da jornada de aprendizado em Desenvolvimento Web.
